@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 //--------------------------------------------------------
 
-Route::view('/home', 'home', ["naam" => "Rakhi"]);
+Route::get('/home/{args}', function($args) {
+    return view('home', ["naam" => $args]);
+})->where('args', '[a-zA-Z0-9]+');
 
 //--------------------------------------------------------
