@@ -1,6 +1,4 @@
 <div>
     <h1>Home page</h1>
-    @foreach($names as $name)
-        <h3>{{$name}}</h3>
-    @endforeach
+    <h3>The argument passed in URL route is : {{$naam}}</h3>
 </div>
