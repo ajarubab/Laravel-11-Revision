@@ -9,6 +9,6 @@ Route::get('/', function () {
 
 //---------------------- Methods to render a view page ----------------------------------
 
-Route::get('/home/{name}',[HomeController::class,'show']);
+Route::get('/home',[HomeController::class,'show']);
 
 //------------------------------------------------------------------------------------------
