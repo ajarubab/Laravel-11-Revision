@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     function show() {
-        return view('home');
+        return view('home', ["name" => "Raja"]);
     }
 }

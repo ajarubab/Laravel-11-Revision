@@ -7,10 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//---------------------- Route to send a data to a specific ulr to a view page ----------------------------------
+//---------------------- Methods to render a view page ----------------------------------
 
-Route::get('/home/{naam}', function() {
-    return view('home', ["naam" => "Raja"]);
-});
+Route::get('/home/{name}',[HomeController::class,'show']);
 
 //------------------------------------------------------------------------------------------
