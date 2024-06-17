@@ -9,8 +9,6 @@ Route::get('/', function () {
 
 //--------------------------------------------------------
 
-Route::get('/home/{name}', function($name){
-    return view('home',["naam" => $name]);
-});
+Route::view('/home', 'home', ["naam" => "Rakhi"]);
 
 //--------------------------------------------------------
