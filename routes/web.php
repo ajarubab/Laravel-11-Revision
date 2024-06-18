@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
-Route::view('/wc','welcome');
-Route::view('/home','home');
-Route::view('/user','user');
-Route::view('/about','about');
-
+Route::get('/user',[UserController::class,'isPage']);
