@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
 {
-    function isPage() {
-        if(View::exists('user1')) {
-            return view('user');
+    function showUser() {
+        if(View::exists('user')) {
+            $name = "Rajat";
+            $people = ['ramu', 'ramesh', 'rakesh', 'roxy'];
+            return view('user',['name'=>$name], ['users' => $people]);
         }
         return "No such View page Exists";
     }
