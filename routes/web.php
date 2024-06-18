@@ -3,19 +3,20 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/wc/{name?}', function ($name = null) {
+    return view('welcome', ['naam' => $name]);
 });
 
 
 //-------------------- Redirection (Try any one at a time) ------------------------------------
 
-Route::get('/home', function() {
-    return redirect('/');
-});
+// Route::redirect('/home','/wc');
+
+// Route::get('/home', function() {
+//     return redirect('/wc');
+// });
 
 Route::get('/home', [HomeController::class,'toWelcomePage']);
 
-Route::redirect('/home','/');
 
 //--------------------------------------------------------

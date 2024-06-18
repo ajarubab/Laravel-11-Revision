@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function show() {
-        return view('home', ["naam" => "Rajesh"]);
-    }
-    
     function toWelcomePage() {
-        return redirect('/');
+        return redirect('/wc/Rakesh');
     }
 }
