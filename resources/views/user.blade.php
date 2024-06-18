@@ -45,3 +45,6 @@
          </h2>
    @endfor
 </div>
+
+@includeif('homer',["Message" => "This is home page shown after it's inclusion from user page (with includeif)"])
+@include('home',["Message" => "This is home page shown after it's inclusion from user page (only include)"])
