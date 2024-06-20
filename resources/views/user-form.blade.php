@@ -15,8 +15,8 @@
             <span style="color:red">@error('username'){{$message}}@enderror</span><br>
         </div>
         <div class="input-wrapper">
-            <input class="user-details {{$errors->first('useremail') ? 'input-error' : ''}}" type="email" placeholder="Enter Email" name="useremail" value="{{old('useremail')}}">
-            <span style="color:red">@error('useremail'){{$message}}@enderror</span><br>
+            <input class="user-details {{$errors->first('user-email') ? 'input-error' : ''}}" type="email" placeholder="Enter Email" name="user-email" value="{{old('user-email')}}">
+            <span style="color:red">@error('user-email'){{$message}}@enderror</span><br>
         </div>
         <div class="input-wrapper">
             <input class="user-details {{$errors->first('phone') ? 'input-error' : ''}}" type="text" placeholder="Phone Number" name="phone" value="{{old('phone')}}">

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rules\smallCaseEmail;
 
 class FormController extends Controller
 {
-    //
     function getUserDetails(Request $req) {
         $req->validate([
             'username' => ['required', 'regex:/^[a-zA-Z\s]+$/', 'min:3'],
-            'useremail' => ['required', 'email', 'regex:/^[a-zA-Z0-9]+@[a-zA-Z0-9.]+\.[a-zA-Z]{1,}$/'],
+            'user-email' => ['required', 'email', 'regex:/^[a-zA-Z0-9]+@[a-zA-Z0-9.]+\.[a-zA-Z]{1,}$/', new smallCaseEmail()],
             'phone' => ['required', 'numeric', 'digits:10', 'regex:/^[6-9]/'],
             'skills' => 'required',
             'gender' => 'required',
