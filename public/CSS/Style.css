@@ -25,3 +25,12 @@
     border-radius: 2px;
     margin: 5px;
 }
+.input-error {
+    border: 2px solid red;
+    color: red;
+}
+.input-wrapper-checkbox , .input-wrapper-radio {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+}
