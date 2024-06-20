@@ -19,3 +19,9 @@
     display: inline-block;
     margin: 5px;
 }
+.user-details {
+    height: 25px;
+    width: 200px;
+    border-radius: 2px;
+    margin: 5px;
+}
