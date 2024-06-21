@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
-Route::view('/user','user');
 Route::view('/home','home');
-Route::view('/home/{nm}','home');
 Route::view('/about','about');
-Route::view('/about/{name}','about');
+
+// named route for homepage
+Route::view('/home/father/sister/husband','home')->name('fufaHome');
+
+
+Route::get('show',[HomeController::class,'toFufaHome']);
