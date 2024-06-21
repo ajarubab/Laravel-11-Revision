@@ -7,6 +7,6 @@
     <h1>Welcome to About page</h1>
    <!-- using named route to fetch url of fufaHome aka Home page -->
     <a href="{{route('fufaHome')}}">Fufa home</a><br>
-
+    <a href="{{route('mosaHome',['name'=>'ram'])}}">Mosa home</a><br>
 </body>
 </html>

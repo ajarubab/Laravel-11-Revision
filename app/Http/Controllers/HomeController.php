@@ -10,4 +10,8 @@ class HomeController extends Controller
         // return redirect()->to('/home/father/sister/husband');        // traditionalway of redirecting
         return to_route('fufaHome');    // using named route taking function to_route to execute any url
     }
+
+    function toMosaHome() {
+        return to_route('mosaHome', ["name"=>"amar"]);
+    }
 }
