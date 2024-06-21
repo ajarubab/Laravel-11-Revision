@@ -6,6 +6,5 @@
 <body>
     <div>
         <h1>Welcome to Home page</h1>
-        <a href="/about">About</a>
 </body>
 </html>

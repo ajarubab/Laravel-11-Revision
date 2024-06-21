@@ -6,10 +6,22 @@ use App\Http\Controllers\HomeController;
 Route::view('/home','home');
 Route::view('/about','about');
 
-// named route for homepage
-Route::get('show',[HomeController::class,'toFufaHome']);
-Route::view('/home/father/sister/husband','home')->name('fufaHome');
 
+// Route::view('/naam', 'user', ["name" => "ramesh"]);
+// Route::view('student/home', 'home');
+// Route::get('student/show',[HomeController::class,'show']);
+// Route::get('student/add',[HomeController::class,'add']);
+// Route::get('/home/{name?}', function($name = null) {
+//     return view('user',['name' => $name]);
+// });
 
-Route::get('see',[HomeController::class,'toMosaHome']);
-Route::view('/home/mother/sister/husband/{name}','home')->name('mosaHome');
+    
+Route::prefix('student')->group(function(){
+    Route::view('/naam', 'user', ["name" => "ramesh"]);
+    Route::view('/home', 'home');
+    Route::get('/show',[HomeController::class,'show']);
+    Route::get('/add',[HomeController::class,'add']);
+    Route::get('/home/{name?}', function($name = null) {
+        return view('user',['name' => $name]);
+    });
+});

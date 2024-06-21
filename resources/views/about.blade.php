@@ -4,9 +4,6 @@
    <title>About Page</title>
 </head>
 <body>
-    <h1>Welcome to About page</h1>
-   <!-- using named route to fetch url of fufaHome aka Home page -->
-    <a href="{{route('fufaHome')}}">Fufa home</a><br>
-    <a href="{{route('mosaHome',['name'=>'ram'])}}">Mosa home</a><br>
+    <h2>Adding something to the About page</h2>
 </body>
 </html>
