@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\IsEmployee;
 
 // applying a middleware group to a single routes
 
@@ -23,3 +24,6 @@ Route::middleware('AgeCountryOnly')->group(function() {
         });
     });
 });
+
+// applying single middleware validation directly on route
+Route::view('employee', 'employee')->middleware(IsEmployee::class);
