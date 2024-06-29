@@ -19,7 +19,7 @@ class IsEmployee
             echo "Verified, Welcome to the Organisation.<br>";
             return $next($request);
         } else {
-            die('XXX Unauthorised Access XXX');
+            die('you must be an employee of this organisation.');
         }
     }
 }

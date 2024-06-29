@@ -16,7 +16,7 @@ class CountryCheck
     public function handle(Request $request, Closure $next): Response
     {
         if($request->country != 'india') {
-            die('You must be an Indian to cast your vote in this election.');
+            die('You must be an Indian.');
         }
         return $next($request);
     }
