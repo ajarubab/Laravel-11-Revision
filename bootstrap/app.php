@@ -15,10 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
-        $middleware->appendToGroup('Concent', [
+        $middleware->appendToGroup('Consent', [
             AgeCheck::class,
             CountryCheck::class,
             IAgreeCheck::class,
+        ]);
+        $middleware->appendToGroup('AgeCountryOnly', [
+            AgeCheck::class,
+            CountryCheck::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
