@@ -23,6 +23,8 @@ class HomeController extends Controller
     }
     
     function about($name) {
-        return $name;
+        // Try by appending "?age=19&&country=india&&consent=agreed" and changing the values of age, country and consent
+        echo "Middleware validadtions passed <br>";
+        return "Welcome ".$name;
     }
 }

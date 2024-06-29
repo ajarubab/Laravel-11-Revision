@@ -9,6 +9,6 @@ Route::prefix('student')->group(function(){
         Route::get('add','add');
         Route::get('delete','delete');
         Route::get('update','update');
-        Route::get('about/{name}','about');
+        Route::get('about/{name}','about')->middleware('Concent');
     });
 });
