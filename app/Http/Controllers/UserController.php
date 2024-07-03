@@ -27,6 +27,7 @@ class UserController extends Controller
          * 15. Enter the name and email click on go. it will insert a data in users table.
          * 16. Now again refresh the shouUserData function's Route, you will get that single inserted data having name, email and password.
          */
-        return DB::select('select * from users');
+        $userData =  DB::select('select * from users');
+        return view('user', ['users' => $userData]);
     }
 }

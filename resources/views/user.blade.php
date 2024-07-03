@@ -6,7 +6,20 @@
 <body>
    <div>
       <h1>Welcome to User page</h1>
-      <h2>The name of user is : {{$name}}</h2>
+      <table border="2">
+         <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+         </tr>
+         @foreach($users as $user)
+         <tr>
+            <td>{{$user->Id}}</td>
+            <td>{{$user->Name}}</td>
+            <td>{{$user->Email}}</td>
+         </tr>
+         @endforeach
+      </table>
 
    </div>
 </body>
