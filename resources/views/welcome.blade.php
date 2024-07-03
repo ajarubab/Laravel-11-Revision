@@ -5,8 +5,5 @@
 </head>
 <body>
     <h1>Welcome Page</h1><br>
-    <a href="/home">Home</a><br>
-    <a href="/user">User</a><br>
-    <a href="/about">About</a><br>
 </body>
 </html>
