@@ -9,6 +9,6 @@ class StudentController extends Controller
 {
     function getStudentsData() {
         $data = new Student();
-        return $data->all();
+        return view('studentPage', ['students' => $data->all()]);
     }
 }
