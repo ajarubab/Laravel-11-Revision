@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -17,5 +18,14 @@ class UserController extends Controller
 
         // decoding the jsonified output of $response into array and sending it to the user view page
         return view('user', ['users' => json_decode($response)]);
+    }
+
+    function showQueries() {
+
+        // using DB class table's get method, we fetch all data of the table
+        $result = DB::table('users')->get();
+        
+        return view('user', ['usersData' =>$result]);
+
     }
 }
