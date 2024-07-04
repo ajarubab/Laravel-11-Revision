@@ -18,4 +18,10 @@ class Student extends Model
     // just assign the table name to the protected $table variable and we are good to go.
 
     protected $table = "college_students";  // here 'college_students' is the table name in the database.
+
+    // we can use any funtion also here if needed, for example:
+
+    function showThisMsg() {
+        return "This message is from Student Model file";
+    }
 }
