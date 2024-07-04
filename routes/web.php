@@ -8,4 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('users', [UserController::class, 'showUserData']);
+
 Route::get('usersTableData', [UserController::class, 'showQueries']);

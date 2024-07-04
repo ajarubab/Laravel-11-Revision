@@ -12,12 +12,14 @@
             <td>Id</td>
             <td>Name</td>
             <td>Email</td>
+            <td>Age</td>
          </tr>
          @foreach($usersData as $ud)
          <tr>
-            <td>{{$ud->Id}}</td>
+            <td>{{$ud->id}}</td>
             <td>{{$ud->Name}}</td>
             <td>{{$ud->Email}}</td>
+            <td>{{$ud->Age}}</td>
          </tr>
          @endforeach
       </table>
