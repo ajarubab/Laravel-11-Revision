@@ -22,17 +22,19 @@ class UserController extends Controller
 
     function showQueries() {
 
-        // using DB class table's get method, we fetch all data of the table
-        // $result = DB::table('college_students')->get();
+        // using DB class table's insert method, we can insert data into the table
+        $data = DB::table('college_students')->insert([
+            'Name' => 'Ramesh',
+            'Email' => 'Ram@esh.in',
+            'Age' => 38,
+        ]);
 
-        // Using the Where Clause with DB table class
-        // $result = DB::table('college_students')->where('Age','>',30)->get();
-
-        // Using the first method with DB table class
-        $result = DB::table('college_students')->first();
-
-        // as single row returned in output it will be changed into array to show on viewpage
-        return view('user', ['usersData' =>[$result]]);
-
+        if($data){
+            echo "Data inserted successfully.<br>";
+            $result = DB::table('college_students')->get();
+            return view('user', ['usersData' =>$result]);
+        } else {
+            return "Data insertion failed.";
+        }
     }
 }
