@@ -21,20 +21,16 @@ class UserController extends Controller
     }
 
     function showQueries() {
-
-        // using DB class table's Update method, we can update pre-existing data of the table
-        $data = DB::table('college_students')->where('id','7')->update([
-            'Name' => 'Roshani',
-            'Email' => 'Ro@sh.ani',
-            'Age' => 29,
-        ]);
+        
+        // using DB class table's delete method, we can delete pre-existing data from the table
+        $data = DB::table('college_students')->where('Name','Rohit')->delete();
 
         if($data){
-            echo "Data update successfully.<br>";
+            echo "Data deleted successfully.<br>";
             $result = DB::table('college_students')->get();
             return view('user', ['usersData' =>$result]);
         } else {
-            return "Data updation failed.";
+            return "Data deletion failed.";
         }
     }
 }
