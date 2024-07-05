@@ -22,9 +22,17 @@ class UserController extends Controller
 
     function showQueries() {
 
-        // Using the Where Clause with DB table class
-        $result = DB::table('college_students')->where('Age','>',30)->get();
+        // using DB class table's get method, we fetch all data of the table
+        // $result = DB::table('college_students')->get();
 
-        return view('user', ['usersData' =>$result]);
+        // Using the Where Clause with DB table class
+        // $result = DB::table('college_students')->where('Age','>',30)->get();
+
+        // Using the first method with DB table class
+        $result = DB::table('college_students')->first();
+
+        // as single row returned in output it will be changed into array to show on viewpage
+        return view('user', ['usersData' =>[$result]]);
+
     }
 }
