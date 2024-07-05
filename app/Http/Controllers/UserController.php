@@ -22,19 +22,19 @@ class UserController extends Controller
 
     function showQueries() {
 
-        // using DB class table's insert method, we can insert data into the table
-        $data = DB::table('college_students')->insert([
-            'Name' => 'Ramesh',
-            'Email' => 'Ram@esh.in',
-            'Age' => 38,
+        // using DB class table's Update method, we can update pre-existing data of the table
+        $data = DB::table('college_students')->where('id','7')->update([
+            'Name' => 'Roshani',
+            'Email' => 'Ro@sh.ani',
+            'Age' => 29,
         ]);
 
         if($data){
-            echo "Data inserted successfully.<br>";
+            echo "Data update successfully.<br>";
             $result = DB::table('college_students')->get();
             return view('user', ['usersData' =>$result]);
         } else {
-            return "Data insertion failed.";
+            return "Data updation failed.";
         }
     }
 }
