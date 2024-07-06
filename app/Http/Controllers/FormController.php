@@ -29,4 +29,16 @@ class FormController extends Controller
     function deleteRoute(){
         return "Delete Route Method.";
     }
+    
+    function anyRoute(){
+        return "Any Route Method.";
+    }
+    
+    function getPostRoute(){
+        return "Get-Post Route Method.";
+    }
+    
+    function putPatchRoute(){
+        return "Put-Patch Route Method.";
+    }
 }
