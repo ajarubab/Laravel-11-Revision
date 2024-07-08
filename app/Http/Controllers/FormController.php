@@ -7,38 +7,46 @@ use Illuminate\Http\Request;
 class FormController extends Controller
 {
     //
-    function getRoute(){
+    function getRoute(Request $req){
         // on the submission of the form with get method we get the following in url
         // /get-form?username=Rajat+kumar&email=Raj%40at.in&age=12&password=12345
         // it shows the data filled in the URL when we go with get method in form
-        return 'Get Route Method.';
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
 
-    function postRoute(){
-        return "Post Route Method.";
+    function postRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
     
-    function putRoute(){
-        return "Put Route Method.";
+    function putRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
     
-    function patchRoute(){
-        return "Patch Route Method.";
+    function patchRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
     
-    function deleteRoute(){
-        return "Delete Route Method.";
+    function deleteRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
     
-    function anyRoute(){
-        return "Any Route Method.";
+    function anyRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
     
-    function getPostRoute(){
-        return "Get-Post Route Method.";
+    function getPostRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
     
-    function putPatchRoute(){
-        return "Put-Patch Route Method.";
+    function putPatchRoute(Request $req){
+        echo "Requested Method : ". $req->method(). "\n\n";
+        return $req;
     }
 }
