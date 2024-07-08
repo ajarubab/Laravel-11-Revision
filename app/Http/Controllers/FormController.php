@@ -6,47 +6,28 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
-    //
-    function getRoute(Request $req){
-        // on the submission of the form with get method we get the following in url
-        // /get-form?username=Rajat+kumar&email=Raj%40at.in&age=12&password=12345
-        // it shows the data filled in the URL when we go with get method in form
-        echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-
     function postRoute(Request $req){
+        
         echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-    
-    function putRoute(Request $req){
-        echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-    
-    function patchRoute(Request $req){
-        echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-    
-    function deleteRoute(Request $req){
-        echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-    
-    function anyRoute(Request $req){
-        echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-    
-    function getPostRoute(Request $req){
-        echo "Requested Method : ". $req->method(). "\n\n";
-        return $req;
-    }
-    
-    function putPatchRoute(Request $req){
-        echo "Requested Method : ". $req->method(). "\n\n";
+        echo "Route Path is : ". '/'.$req->path(). "\n\n";
+        echo "Route url is : ". $req->url(). "\n\n";
+        echo "Entered Email is : ". $req->input('email'). "\n\n";
+        echo "Also Entered Email is : ". $req->email. "\n\n";
+        print_r($req->input()); // in raw/array form
+        echo "\n\nAll Data in Object form is :\n\n ". $req->collect(). "\n\n";    // in object form
+        echo "Running IP Address is : ". $req->ip(). "\n\n";    // in object form
+
+        if($req->isMethod('post')){
+            echo "post method hai\n";
+        } else {
+            echo "post method nahi hai\n";
+        }
+        
+        if($req->is('user')){
+            echo "user path hi hai\n\n";
+        } else {
+            echo "user path nahi hai\n\n";
+        }
         return $req;
     }
 }
